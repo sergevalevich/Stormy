@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_title">Упс! Извините</string>
+    <string name="error_message">Произошла ошибка. Попробуйте ещё раз</string>
+    <string name="network_unavailable_message">Интернет недоступен</string>
+    <string name="no_daily_forecast_data">Нет информации</string>
+    <string name="humidity_label_text">ВЛАЖНОСТЬ</string>
+    <string name="precip_label_text">ОСАДКИ</string>
+    <string name="launch_summary_text">Получение текущей погоды...</string>
+    <string name="hourly_button_text">ЕЖЕЧАСНО</string>
+    <string name="daily_button_text">НА НЕДЕЛЮ</string>
+    <string name="this_week_label_text">Погода на этой неделе</string>
+    <string name="hourly_summary_message" formatted = "false">В %s будет %s и %s</string>
+    <string name="daily_summary_message" formatted = "false">%s: %s</string>
+    <string name="language">ru</string>
+</resources>
