@@ -77,6 +77,9 @@ public class MainActivity extends AppCompatActivity implements LocationProvider.
     @Bind(R.id.relativeLayout)
     RelativeLayout mRelativeLayout;
 
+
+    ///change 1
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

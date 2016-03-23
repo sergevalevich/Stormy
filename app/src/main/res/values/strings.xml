@@ -9,7 +9,7 @@
     <string name="fak">40ec6b6da7e14622e09ff52a227d5037</string>
     <string name="humidity_label_text">HUMIDITY</string>
     <string name="precip_label_text">RAIN/SNOW?</string>
-    <string name="launch_summary_text">Getting current weather...</string>
+    <string name="launch_summary_text">Getting current weather…</string>
     <string name="hourly_button_text">HOURLY</string>
     <string name="daily_button_text">7 DAY</string>
     <string name="this_week_label_text">This week\'s weather</string>
