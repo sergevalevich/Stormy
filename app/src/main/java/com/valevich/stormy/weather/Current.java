@@ -8,9 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Created by NotePad.by on 08.11.2015.
- */
+
 public class Current {
     private String mIcon;
     private double mTemperature;
