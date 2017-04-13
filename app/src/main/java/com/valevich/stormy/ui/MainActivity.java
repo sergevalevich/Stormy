@@ -6,10 +6,9 @@ import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,13 +20,12 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.plattysoft.leonids.ParticleSystem;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-import com.valevich.stormy.location.LocationProvider;
 import com.valevich.stormy.R;
+import com.valevich.stormy.location.LocationProvider;
 import com.valevich.stormy.weather.Current;
 import com.valevich.stormy.weather.Day;
 import com.valevich.stormy.weather.Forecast;
@@ -39,7 +37,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -54,27 +52,27 @@ public class MainActivity extends AppCompatActivity implements LocationProvider.
     private LocationProvider mLocationProvider;
     private Alerter mAlerter = new Alerter();
 
-    @Bind(R.id.temperatureLabel)
+    @BindView(R.id.temperatureLabel)
     TextView mTemperatureLabel;
-    @Bind(R.id.humidityValue)
+    @BindView(R.id.humidityValue)
     TextView mHumidityValue;
-    @Bind(R.id.precipValue)
+    @BindView(R.id.precipValue)
     TextView mPrecipValue;
-    @Bind(R.id.summaryLabel)
+    @BindView(R.id.summaryLabel)
     TextView mSummaryLabel;
-    @Bind(R.id.iconImageView)
+    @BindView(R.id.iconImageView)
     ImageView mIconImageView;
-    @Bind(R.id.refreshImageView)
+    @BindView(R.id.refreshImageView)
     ImageView mRefreshImageView;
-    @Bind(R.id.progressBar)
+    @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
-    @Bind(R.id.locationLabel)
+    @BindView(R.id.locationLabel)
     TextView mLocationLabel;
-    @Bind(R.id.dailyButton)
+    @BindView(R.id.dailyButton)
     Button mDailyButton;
-    @Bind(R.id.hourlyButton)
+    @BindView(R.id.hourlyButton)
     Button mHourlyButton;
-    @Bind(R.id.relativeLayout)
+    @BindView(R.id.relativeLayout)
     RelativeLayout mRelativeLayout;
 
 
@@ -191,8 +189,7 @@ public class MainActivity extends AppCompatActivity implements LocationProvider.
         Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), mForecast.getCurrent().getIconId());
         mIconImageView.setImageDrawable(drawable);
 
-        double latitude = mForecast.getCurrent().getLatitude();
-        double longitude = mForecast.getCurrent().getLongitude();
+
         mLocationLabel.setText(mForecast.getCurrent().getCity(this));
     }
 
@@ -302,26 +299,6 @@ public class MainActivity extends AppCompatActivity implements LocationProvider.
 
 
     }
-
-    /*private void letItSnow() {
-        DisplayMetrics displaymetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        int height = displaymetrics.heightPixels;
-        int width = displaymetrics.widthPixels;
-        ParticleSystem snowSystemLeft = new ParticleSystem(this, 80, R.drawable.ic_action_snowflake, 10000);
-        snowSystemLeft.setSpeedModuleAndAngleRange(0f, 0.2f, 180, 180)
-                .setRotationSpeed(144)
-                .setScaleRange(0f,1f)
-                .setAcceleration(0.00005f, 90)
-                .emit(findViewById(R.id.relativeLayout), 8);
-        snowSystemLeft.updateEmitPoint(width, 0);
-        ParticleSystem snowSystemRight = new ParticleSystem(this, 80, R.drawable.ic_action_snowflake, 10000);
-        snowSystemRight.setSpeedModuleAndAngleRange(0f, 0.2f, 0, 0)
-                .setRotationSpeed(144)
-                .setScaleRange(0f,1f)
-                .setAcceleration(0.00005f, 90)
-                .emit(findViewById(R.id.relativeLayout), 8);
-    }*/
 
     @Override
     public void handleNewLocation(Location location) {
