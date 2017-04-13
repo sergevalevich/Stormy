@@ -4,14 +4,9 @@ import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 
-import com.valevich.stormy.R;
-
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.TimeZone;
 
 /**
  * Created by NotePad.by on 08.11.2015.
@@ -89,7 +84,7 @@ public class Current {
             e.printStackTrace();
         }
 
-        if (addresses != null && addresses.size() > 0) {
+        if (addresses != null && !addresses.isEmpty()) {
             mCity = addresses.get(0).getLocality();
         }
 
